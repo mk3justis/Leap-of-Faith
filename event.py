@@ -112,6 +112,26 @@ def check_event(event, event_object):
         event_object.blurb = "Home Game Night - One of your roommates decides that you all should have a game night tonight. All of you will get together and play Party Box Central 7. It sounds quite fun, and it’s been some time since you’ve hung out recreationally with your roommates. But alas, you have lots of work this week. Do you join in the game night?"
         event_object.yes(0, -1, 2, 0)
         event_object.no(0, 1, 0, 0)
+    elif(event == 24):
+        event_object.blurb = "Listening to Music - Work is hard. Really hard. But one of the upsides is that you get to listen to music while you do it. You’re singing along and getting in good with the vibes when you realize all this fun is distracting you from your work. You’re sure you can get it done in time, but it may take longer, delaying you from getting more work done. Do you turn it off?"
+        event_object.yes(0, 1, 0, -1)
+        event_object.no(0, -1, 0, 1)
+    elif(event == 25):
+        event_object.blurb = "Code Family - Your programming professor assigned a project that they’re allowing to be done in groups. Group work is fine and all, but you’ve had some bad experiences with group projects in the past. Plus, in order to share code, you all would have to use Code Family, which is a very difficult app to use and deal with. But it’ll get done faster. Is it worth it?"
+        event_object.yes(1, 0, 1, -1)
+        event_object.no(0, 0, -1, 0)
+    elif(event == 26):
+        event_object.blurb = "Group Project - Your professor has assigned a project that they’re allowing to be done in groups. You’ve had some bad experiences working in groups before. You always have to get everyone to work together and make sure that everyone does their part. Exhausting. But it’ll get done faster and likely better. Is it worth it?"
+        event_object.yes(0, 2, 1, -1)
+        event_object.no(0, 1, -1, 1)
+    elif(event == 27):
+        event_object.blurb = "Stay After Class - Your professor asks you to stay after class. However, your programming class is right after this one and it’s on the other side of campus. If you don’t leave NOW, you will be late and miss the first chunk of class. Do you stay?"
+        event_object.yes(-1, 1, 0, 0)
+        event_object.no(1, 1, 0, 0)
+    elif(event == 28):
+        event_object.blurb = "Study Session - Your roommate is struggling with a class that you are very good at. One day, after class, they come up to you and ask if you could do some study sessions with them. You don’t have a lot of teaching experience, and your roommate can be kind of intense sometimes, so this could be more draining for you than actually productive. On the other hand, you two don’t have that much of a connection. Do you help him?"
+        event_object.yes(0, 0, 1, -1)
+        event_object.no(0, 0, -1, 1)
     elif (event == 29):
         event_object.blurb = "Sister’s Play - Your younger sister is in the school play, and you said that you would go. So this weekend, you make the long drive home and see the performance. You’re quite proud of your sister. She’s growing up right before your eyes, and this play allowed you to really see that. You’re glad you came. As you’re packing your bags to head back, your mom tells you that you can stay the weekend. It’s been a while since you came home, and you are getting sick of dorm food and dorm mattresses. However, you do have early morning classes on Monday, so if you do spend the weekend here, you may come in Sunday all tired. Plus, it’s much easier to study in your dorm than it is in your noisy house. Do you stay?"
         event_object.yes(0, -1, 4, 5)
