@@ -21,8 +21,20 @@ class Player :
         self.mental += points
         
     
-    # Would like to make this prettier but will be ugly for now
+    # Private function to convert user input to 0 or 1.
+    def __condition_update(self, condition) :
+        condition.lower() 
+        if condition == 'y' or condition == 'yes' :
+            condition = 0
+        elif condition == 'n' or condition == 'no' :
+            condition = 1
+        else :
+            raise Exception("Invalid condition.")
+    
+    # Calls private function and updates stats based on event.
     def event_effects(self, event, condition) :
+        self.__condition_update(condition)
+        
         if condition == 0 :
             self.update_coding(event.attributes.iloc[0][0])
             self.update_education(event.attributes.iloc[0][1])
@@ -34,7 +46,4 @@ class Player :
             self.update_education(event.attributes.iloc[1][1])
             self.update_social(event.attributes.iloc[1][2])
             self.update_mental(event.attributes.iloc[1][3])
-        
-        else :
-            raise Exception("Invalid condition. Please pass in 0 for yes or 1 for no.")
             
