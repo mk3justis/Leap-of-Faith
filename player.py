@@ -1,11 +1,14 @@
 # Create a player class with the necessary attributes
 class Player :
-    def __init__(self) :
+    def __init__(self, name, dream_job, university) :
         self.coding = 0
         self.education = 0
         self.social = 0
         self.mental = 0
         self.energy = 0
+        self.name = name
+        self.dream_job = dream_job
+        self.university = university
     
     # Functions to update the attribute values for the player
     def update_coding(self, points) :
