@@ -84,8 +84,8 @@ def main():
                 print("2 for hanging out with friends")
                 print("3 for getting ahead oon the material in class")
                 print("4 for relaxing and destressing")
-                choice = int(input(""))
-                
+                choice = int(input())
+
                 if(choice == 1):
                     player.update_coding(1)
                 elif(choice == 2):
