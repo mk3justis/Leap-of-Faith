@@ -18,39 +18,38 @@ print(boysie.coding, boysie.education, boysie.social, boysie.mental)
 def main():
     name = input("What is your name?")
     dream_job = input("What is your dream company? ")
-    plauer = Player(0, 0, 0, 0, 0)
+    player = Player(0, 0, 0, 0, 0)
     focus_number = 1
     focus_attribute = 4
     while focus_number <= 3:
         print(f"What was your number {focus_number} focus this summer?")
-        if plauer.coding == 0:
+        if player.coding == 0:
             print("1 for Coding")
-        if plauer.social == 0:
+        if player.social == 0:
             print("2 for Social")
-        if plauer.education == 0:
+        if player.education == 0:
             print("3 for Education")
-        if plauer.mental == 0:
+        if player.mental == 0:
             print("4 for Mental")
         focus = int(input(""))
 
-        if (focus == 1 and plauer.coding == 0):
-            plauer.coding = plauer.coding + focus_attribute
-            print(plauer.coding)
-        elif (focus == 2 and plauer.social == 0):
-            plauer.social += focus_attribute
-            print(plauer.social)
-        elif (focus == 3 and plauer.education == 0):
-            plauer.education += focus_attribute
-            print(plauer.education)
-        elif (focus == 4 and plauer.mental == 0):
-            plauer.mental += focus_attribute
-            print(plauer.mental)
+        if (focus == 1 and player.coding == 0):
+            player.coding = player.coding + focus_attribute
+            print(player.coding)
+        elif (focus == 2 and player.social == 0):
+            player.social += focus_attribute
+            print(player.social)
+        elif (focus == 3 and player.education == 0):
+            player.education += focus_attribute
+            print(player.education)
+        elif (focus == 4 and player.mental == 0):
+            player.mental += focus_attribute
+            print(player.mental)
         focus_attribute -= 1
         focus_number += 1
 
         week = 1
         while (week < 32):
-            event_type = 0  # Generate a random number that will determine the event type
             event_number = 0  # Event type. 1 = Rare, 2-8 = common, 9-10 = none
             event = 0
             if (week == 8):
@@ -61,18 +60,10 @@ def main():
                 pass  # some code for exam 2 goes here
             else:
                 event_number = random.randint(1, 10)
-            # Determine the event type:
+            # Generate the event type:
             if (event_number == 1):  # Rare
-                event_type = 1
-            elif (event_number > 1 and event_number < 9):  # Common
-                event_type = 2
-            elif (event_number >= 9):  # None
-                event_type = 3
-
-            # Generate the event:
-            if (event_number == 1):
                 event = random.randint(29, 35)
-            elif (event_number == 2):
+            elif (event_number > 1 and event_number < 9):  # Common
                 event = random.randint(1, 23)
 
             # This section of code prevents an event from happening twice
@@ -87,8 +78,22 @@ def main():
                     possibility = 0
                     break
 
-            if (event_number == 3):
-                pass
+            if(event_number >= 9):  # None
+                print("There doesn't seem to be much going on this week. What would you like to do?")
+                print("1 for experimenting and developing code")
+                print("2 for hanging out with friends")
+                print("3 for getting ahead oon the material in class")
+                print("4 for relaxing and destressing")
+                choice = int(input(""))
+                
+                if(choice == 1):
+                    player.update_coding(1)
+                elif(choice == 2):
+                    player.update_social(1)
+                elif(choice == 3):
+                    player.update_education(1)
+                elif(choice == 4):
+                    player.update_mental(1)
             week = week + 1
 
 main()
