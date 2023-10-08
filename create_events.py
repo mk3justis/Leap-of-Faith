@@ -154,9 +154,9 @@ def generate_events():
     International_Technology_Summit.no(0, 1, -2, -2)
     eventList.append(International_Technology_Summit)
     
-    Disaster = Event("Disaster  - A Natural disaster is heading for your school. Your university announces that classes are canceled for the remainder of the week. This is good, as it allows you to quickly get your work done and maybe even do some coding! However, your parents call and say that they are very uncomfortable with you being there during a disaster. It’s a long and stressful drive, and the roads may be clogged up with other people leaving to go to other places. And you may not be able to code as much as you would if you do the drive. Do you try to make the drive?\n")
-    Disaster.yes(2, 2, 4, -3)
-    Disaster.no(4, 4, -3, 0)
+    Disaster = Event("Disaster  - A Natural disaster is heading for your school. Your university announces that classes are canceled for the remainder of the week. This is good, as it allows you to quickly get your work done and maybe even do some coding! However, your parents call and say that they are very uncomfortable with you being there during a disaster. It’s a long and stressful drive, and the roads may be clogged up with other people leaving to go to other places. And you may not be able to code as much as you would if you do the drive. Do you try to make the stay?")
+    Disaster.yes(4, 4, -3, 0)
+    Disaster.no(2, 2, 4, -3)
     eventList.append(Disaster)
     
     Old_Friend_From_High_School = Event("Old Friend From High School - Your best friend from high school is coming from his school to visit. It’s been a bit since you’ve seen them, since you spent all summer getting ready for college and have drifted apart a little bit. However, you do have a significant amount of work this weekend. You’re sure you can power through it all if you half ass an assignment or two. Do you hang out with him?\n")
