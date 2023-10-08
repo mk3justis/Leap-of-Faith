@@ -79,9 +79,9 @@ def generate_events():
     Faith_Crisis.no(0, 0, -2, 2)
     eventList.append(Faith_Crisis)
     
-    Take_A_Walk = Event("Take a Walk - It’s been a long, exhausting week of work. After your final class of the week, you decide that it’d be beneficial for you if you take a walk before dinner. You know that if you don’t get to the cafeteria soon, a long line will form and you'll be stuck there for a while, which could mess up your Friday night study time. But you really need this walk. Do you take the walk?\n")
-    Take_A_Walk.yes(0, -1, 0, 2)
-    Take_A_Walk.no(0, 1, 0, -1)
+    Take_A_Walk = Event("Take a Walk - It’s been a long, exhausting week of work. After your final class of the week, you decide that it’d be beneficial for you if you take a walk before dinner. You know that if you don’t get to the cafeteria soon, a long line will form and you'll be stuck there for a while, which could mess up your Friday night study time. But you really need this walk. Do you study?")
+    Take_A_Walk.yes(0, -1, 0, +1)
+    Take_A_Walk.no(0, 2, 0, -1)
     eventList.append(Take_A_Walk)
     
     Hiding = Event("Hiding  - You are very tired from classes this week. Your last class ends at 4 today. Usually, after your final class, you meet your friend at the cafeteria and get dinner. But you are just so very tired and burnt out. You do not have the mental capacity to maintain a conversation right now. There is a corner in the cafeteria, where you can just eat alone. Do you hide in the corner this time?\n")
