@@ -13,7 +13,7 @@ def generate_events():
     Tutoring_Center.no(0, -1, 1, 0)
     eventList.append(Tutoring_Center)
     
-    Lots_of_Homework = Event("Lots of Homework - Your professors were absolute beasts this week. The workload seems to be never ending. You know you can get it all done, provided you skip going to Church with friends. Which’ll suck, not only because these are your friends, but also, the pastor gives very nice sermons that you’ve learned many good life lessons from. Do you skip Church?\n")
+    Lots_of_Homework = Event("Lots of Homework - Your professors were absolute beasts this week. The workload seems to be never ending. You know you can get it all done, provided you skip going to Faith Services with friends. Which’ll suck, not only because these are your friends, but also, the faith speaker gives very nice sermons that you’ve learned many good life lessons from. Do you skip Services?\n")
     Lots_of_Homework.yes(0, 1, 0, 0)
     Lots_of_Homework.no(0, -1, 0, 2)
     eventList.append(Lots_of_Homework)
@@ -38,9 +38,9 @@ def generate_events():
     Computer_Club_Meet.no(0, 1, -1, 0)
     eventList.append(Computer_Club_Meet)
     
-    Free_Website = Event("Free Website - You find a website that teaches coding. For Free! For free, you can access lessons for ALL the different coding languages! And they have activities that you can use to practice your code. This is your dream come true. One problem. In order for this sort of time commitment, you may have to sacrifice hanging out with your friend this weekend. It’s been a bit since you’ve hung out, and your friend might not like delaying this any longer. Do you use the website?\n")
-    Free_Website.yes(2, 0, -1, 0)
-    Free_Website.no(0, 0, 2, 0)
+    Free_Website = Event("Free Website - You find a website that teaches coding. For Free! For free, you can access lessons for ALL the different coding languages! And they have activities that you can use to practice your code. This is your dream come true. One problem. In order for this sort of time commitment, you may have to sacrifice hanging out with your friend this weekend. It’s been a bit since you’ve hung out, and your friend might not like delaying this any longer. Do you hang out with them?\n")
+    Free_Website.yes(0, 0, 2, 0)
+    Free_Website.no(2, 0, -1, 0)
     eventList.append(Free_Website)
     
     Smart_Friend = Event("Smart Friend - Your friend has been learning and experimenting with all sorts of random computing languages. One day, they approach you and offer to give you some lessons. This would be a very rare opportunity, however, you do have a lot of work this week. You may need to crunch to get all of this done. Do you take them up on your offer?\n")
@@ -74,7 +74,7 @@ def generate_events():
     Annoying_Friend.no(0, 0, -1, 2)
     eventList.append(Annoying_Friend)
     
-    Faith_Crisis = Event("Faith Crisis - The faither speaker is a good speaker and has taught you many good life lessons. Plus, it’s nice to go with your little group of friends. However, lately, you’ve been having some issues with the order. Last week’s service, your speaker went on a rant about something that you really didn’t agree with. This weekend, your friend invites you to come to service again. Do you go?\n")
+    Faith_Crisis = Event("Faith Crisis - It’s the weekend. That means that it’s time to go to Faith Services. You like Services. The faith Speaker is a good preacher and has taught you many good life lessons. Plus, it’s nice to go with your little group of friends. However, lately, you’ve been having some issues with the order. Last week’s service, your speaker went on a rant about something that you really didn’t agree with. This weekend, your friend invites you to come to services again. Do you go?\n")
     Faith_Crisis.yes(0, 0, 2, -2)
     Faith_Crisis.no(0, 0, -2, 2)
     eventList.append(Faith_Crisis)
@@ -164,14 +164,14 @@ def generate_events():
     Old_Friend_From_High_School.no(0, 1, -4, -2)
     eventList.append(Old_Friend_From_High_School)
     
-    Code_Runners_Workshop = Event("Code Runners Workshop - The software company Code Runners is coming to the university and is hosting a workshop on all sorts of aspects of coding. It would be very beneficial to go. But there is one problem. You have homework. A lot of it. If you go, it would take a lot of crunching to get it all done this weekend, which could be stressful. Do you go?\n")
-    Code_Runners_Workshop.yes(5, 0, 2, 0)
-    Code_Runners_Workshop.no(0, 1, 0, -2)
+    Code_Runners_Workshop = Event("Man, you have a lot of work this weekend. You could probably get it all done all nice. If it weren’t for the fact that the software company Code Runners is coming to the university and is hosting a workshop on all sorts of aspects of coding. It would be very beneficial to go. But again, lots of work. Do you do your work?\n")
+    Code_Runners_Workshop.yes(0, 1, 0, -2)
+    Code_Runners_Workshop.no(5, 0, 2, 0)
     eventList.append(Code_Runners_Workshop)
     
-    Code_of_the_Hour = Event("Code of the Hour - The Programming Club is throwing its annual “Code of the Hour” programming event! This would be a big chance to really show off your skills as a programmer. However, you do have a quiz on Thursday, and you do not understand the material all that much. You should probably study. Do you go to the event?\n")
-    Code_of_the_Hour.yes(4, -1, 2, 0)
-    Code_of_the_Hour.no(0, 2, -1, 0)
+    Code_of_the_Hour = Event("The Programming Club is throwing its annual “Code of the Hour” programming event! This would be a big chance to really show off your skills as a programmer. However, you do have a quiz on Thursday, and you do not understand the material all that much. You should probably study. Do you study?\n")    
+    Code_of_the_Hour.yes(0, 2, -1, 0)
+    Code_of_the_Hour.no(4, 2, -1, 0)
     eventList.append(Code_of_the_Hour)
     
     Wellness_Week = Event("Wellness Week - It’s Wellness Week! Everywhere on campus is some sort of mental health wellness stand, designed to help you relax and chill for a bit. We’re talking meditation, therapeutic legos, herb care, and a whole lot more! This all sounds quite appealing. It’s been a bit since you’ve had a decent break. However, you know that you have an assignment due the day after tomorrow. It shouldn’t be too difficult, but you fear if you take this break, you may not get it done in time. Do you take this day to relax and take a break?\n")
