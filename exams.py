@@ -19,17 +19,17 @@ def exam1(player) :
 def exam2(player) :
     ready = input("Are you ready for your second exam?\n")
     
-    if player.education > 14 :
+    if player.education > 18 :
         player.update_education(5)
         print("Wow! That was no match for you!")
-    elif player.education > 11 :
+    elif player.education > 15 :
         player.update_education(3)
         print("Good job, not too shabby.")
-    elif 8 < player.education < 12 :
+    elif 12 < player.education < 16 :
         print("Well, C's get degrees.")
-    elif 6 < player.education < 9 :
+    elif 10 < player.education < 13 :
         player.update_education(-3)
         print("Not your best work, but you didn't die.")
-    elif player.education < 7 :
+    elif player.education < 11 :
         player.update_education(-5)
         print("Oof, maybe STEM isn't for you.")

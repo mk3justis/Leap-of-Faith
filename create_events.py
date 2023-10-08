@@ -51,17 +51,17 @@ def generate_events():
     
     Programming_Homework = Event("Programming Homework - This week’s homework for your programming class is actually quite easy. You’ll be able to get it done quickly, and even gain some good coding experience. But alas, it could take some time, which could eat up into your travel plans with your friends. You were going to go to Ribby's, the famous Barbecue place in the next town.  Do you do the homework?\n")
     Programming_Homework.yes(1, 1, 0, 1)
-    Programming_Homework.no(0, 0, 2, 1)
+    Programming_Homework.no(-2, -1, 2, 1)
     eventList.append(Programming_Homework)
     
     Parental_Visit = Event("Parental Visit - Your parents called this week. They’re coming up to visit you this weekend. While your parents coming up is nice, you were hoping that this weekend, you could take a break and work on a little personal project you started this summer, since you don’t really have a lot of work this weekend. This opportunity may never come up again. Do you ask your parents if you can reschedule?\n")
-    Parental_Visit.yes(2, 0, 0, 1)
-    Parental_Visit.no(0, 0, 2, 0)
+    Parental_Visit.yes(2, 0, -1, 1)
+    Parental_Visit.no(-2, 0, 2, 0)
     eventList.append(Parental_Visit)
     
     Game_Night_with_the_Boys = Event("Game Night with the Boys - Every week, you and your friends get together and play Crag Cats 3. Your role in your party is quite vital. However, this week, you have an absolute TON of homework. Your professors were not merciful this week. You’re sure that you could get it all done this weekend, but it’ll be quite the crunch. Do you do your work?\n")
     Game_Night_with_the_Boys.yes(0, 1, -1, 0)
-    Game_Night_with_the_Boys.no(0, 0, 2, -1)
+    Game_Night_with_the_Boys.no(0, -2, 2, -1)
     eventList.append(Game_Night_with_the_Boys)
     
     Classmate_Needs_Help = Event("Classmate needs Help - The guy that sits behind you in class comes up to you and says that they noticed you answer the professor’s questions a lot and that you seem to know what you’re doing. They then ask for your help with the homework. While you don’t fully believe them about you knowing what you’re doing, you do know that you at least know enough to maybe help them. And this could be an opportunity to make a friend. But, you are also very tired and not sure if you can handle teaching someone right now. Do you see if you can teach them?\n")

@@ -9,17 +9,20 @@
 # boysie.event_effects(office_hours, condition)
 # print(boysie.coding, boysie.education, boysie.social, boysie.mental)
 
-from event import Event
 from player import Player
 from create_events import generate_events
+from exams import *
+from career_fair import go_to_career_fair
+from job_applications import apply
 import random
 
 def main():
+    print("Welcome back from summer break! You are about to experience your next school year at university. How will this pan out for you? Only time will tell...")
     event_list = generate_events()
     name = input("What is your name? ")
     dream_job = input("What is your dream company? ")
     university = input("Which university do you attend? ")
-    player = Player(0, 0, 0, 0, 0, name, dream_job, university)
+    player = Player([], [], 0, 0, 0, 0, 0, name, dream_job, university)
     focus_rank = 1
     focus_points = 4
     already_chose_focus = []
@@ -63,29 +66,41 @@ def main():
     condition = ''
     while week < 32 :
         print("Week", week)
+        # if(player.education < 0):
+        #     print("Your grades are not where they should be. You feel stressed.")
+        #     player.mental -= 1
+        # if(player.coding < 0):
+        #     print("You are not the coder you thought that you would be. You feel like you're not good enough.")
+        #     player.mental -= 1
+        print(f"Coding: {player.coding}, Education: {player.education}, Social: {player.social}, Mental: {player.mental}")
         event_type = 0  # Event type. 1 = Rare, 2-8 = common, 9-10 = none
         event = 0
         if week == 7 :
             print("EXAM NEXT WEEK!")
             event_type = random.randint(1, 10)
         elif week == 8 :
+            exam1(player)
             week += 1
             continue  # some code for exam 1 goes here
         elif week == 15 :
             print("CAREER FAIR NEXT WEEK!")
             event_type = random.randint(1, 10)
         elif week == 16 :
+            go_to_career_fair(player)
             week += 1
             continue  # some code for the career fair goes here
         elif week == 23 :
             print("EXAM NEXT WEEK!")
             event_type = random.randint(1, 10)
         elif week == 24 :
+            exam2(player)
             week += 1
             continue  # some code for exam 2 goes here
         else:
             event_type = random.randint(1, 10)
-        
+            
+        if week == 28 :
+            player.dream_job_stats = [player.coding+3, player.education+3, player.social+3, player.mental+3]
         
         if event_type == 1 :
             event = random.randint(28, 34)
@@ -115,7 +130,6 @@ def main():
             elif choice == 4 :
                 player.update_mental(1)
             week += 1
-            print(f"Coding: {player.coding}, Education: {player.education}, Social: {player.social}, Mental: {player.mental}")
             continue
         # Generate the event:
         while True :
@@ -143,9 +157,8 @@ def main():
                 else :
                     condition = input("Please enter Y/N or Yes/No.\n")
                     continue
-            print(f"Coding: {player.coding}, Education: {player.education}, Social: {player.social}, Mental: {player.mental}")
             break
                  
         week += 1
-
+    apply(player)
 main()

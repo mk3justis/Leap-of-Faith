@@ -1,6 +1,8 @@
 # Create a player class with the necessary attributes
 class Player :
-    def __init__(self, coding, education, social, mental, energy, name, dream_job, university) :
+    def __init__(self, jobs_list, dream_job_stats, coding, education, social, mental, energy, name, dream_job, university) :
+        self.dream_job_stats = dream_job_stats
+        self.jobs_list = jobs_list
         self.coding = coding
         self.education = education
         self.social = social
