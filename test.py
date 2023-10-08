@@ -21,13 +21,12 @@ def main():
     university = "p"
     player = Player(0, 0, 0, 0, 0, name, dream_job, university)
     epoch = 0
-    while epoch < 1000 :
+    while epoch < 100 :
         print(f"Epoch: {epoch+1}")
         week = 1
         events = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26,
                 27, 28, 29, 30, 31, 32, 33, 34]
-        while week < 31 :
-            print("Week", week)
+        while week < 32 :
             event_type = 0  # Event type. 1 = Rare, 2-8 = common, 9-10 = none
             event = 0
             if week == 8 or week == 16 or week == 24 :
@@ -54,7 +53,7 @@ def main():
                 # When that event happens, the number becomes 0, ensuring that it will never happen again
                 event_object = event_list[events[event]]
                 events[event] = -1
-                player.event_effects(event_object, 1)
+                player.event_effects(event_object, 0)
                 break
                 
             
@@ -62,6 +61,6 @@ def main():
             week += 1
         epoch += 1
         
-    print(f"Coding: {player.coding / 1000}, Education: {player.education / 1000}, Social: {player.social / 1000}, Mental: {player.mental / 1000}")
+    print(f"Coding: {player.coding / 100}, Education: {player.education / 100}, Social: {player.social / 100}, Mental: {player.mental / 100}")
 
 main()
