@@ -59,7 +59,7 @@ def generate_events():
     Parental_Visit.no(0, 0, 2, 0)
     eventList.append(Parental_Visit)
     
-    Game_Night_with_the_Boys = Event("Game Night with the Boys - Every week, you and your friends get together and play Crag Cats 3. Your role in your party is quite vital. However, this week, you have an absolute TON of homework. Your professors were not merciful this week. You’re sure that you could get it all done this weekend, but it’ll be quite the crunch. Do you tell your friends that you may have to cancel this week?\n")
+    Game_Night_with_the_Boys = Event("Game Night with the Boys - Every week, you and your friends get together and play Crag Cats 3. Your role in your party is quite vital. However, this week, you have an absolute TON of homework. Your professors were not merciful this week. You’re sure that you could get it all done this weekend, but it’ll be quite the crunch. Do you do your work?")
     Game_Night_with_the_Boys.yes(0, 1, -1, 0)
     Game_Night_with_the_Boys.no(0, 0, 2, -1)
     eventList.append(Game_Night_with_the_Boys)
