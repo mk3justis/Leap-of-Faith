@@ -26,13 +26,13 @@ def main():
     while focus_rank <= 3:
         print(f"What was your number {focus_rank} focus this summer?")
         if player.coding == 0 :
-            print("1 for Coding")
+            print("1: Working on personal coding projects and learning new technologies.")
         if player.social == 0:
-            print("2 for Social")
+            print("2: Hanging out with friends and spending time with family.")
         if player.education == 0:
-            print("3 for Education")
+            print("3: Studying last semester's notes and learning upcoming course content.")
         if player.mental == 0:
-            print("4 for Mental")
+            print("4: Taking time for yourself to relax and finding inner peace.")
         focus = input()
         while True :
             if focus.isdigit() :
@@ -66,19 +66,19 @@ def main():
         event_type = 0  # Event type. 1 = Rare, 2-8 = common, 9-10 = none
         event = 0
         if week == 7 :
-            print("You have an exam next week.")
+            print("EXAM NEXT WEEK!")
             event_type = random.randint(1, 10)
         elif week == 8 :
             week += 1
             continue  # some code for exam 1 goes here
         elif week == 15 :
-            print("The career fair is next week.")
+            print("CAREER FAIR NEXT WEEK!")
             event_type = random.randint(1, 10)
         elif week == 16 :
             week += 1
             continue  # some code for the career fair goes here
         elif week == 23 :
-            print("You have an exam next week.")
+            print("EXAM NEXT WEEK!")
             event_type = random.randint(1, 10)
         elif week == 24 :
             week += 1
@@ -93,10 +93,10 @@ def main():
             event = random.randint(0, 27)
         elif event_type >= 9 :
             print("There doesn't seem to be much going on this week. What would you like to do?")
-            print("1 for experimenting and developing code")
-            print("2 for hanging out with friends")
-            print("3 for getting ahead on the material in class")
-            print("4 for relaxing and destressing")
+            print("1: Experimenting and developing code")
+            print("2: Hanging out with friends")
+            print("3: Getting ahead on the material in class")
+            print("4: Relaxing and destressing")
             while True :
                 choice = input()
                 if choice.isdigit() :
@@ -133,7 +133,7 @@ def main():
             condition = input(event_object.blurb)
             while True :
                 # condition = str(condition)
-                condition.lower()
+                condition = condition.lower()
                 if condition == 'y' or condition == 'yes' :
                     player.event_effects(event_object, 0)
                     break
@@ -141,7 +141,7 @@ def main():
                     player.event_effects(event_object, 1)
                     break
                 else :
-                    condition = input("Please enter y/n or yes/no.\n")
+                    condition = input("Please enter Y/N or Yes/No.\n")
                     continue
             print(f"Coding: {player.coding}, Education: {player.education}, Social: {player.social}, Mental: {player.mental}")
             break

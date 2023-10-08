@@ -30,12 +30,12 @@ def generate_events():
     
     JavaScript_Workshop = Event("JavaScript Workshop - The computer club is hosting a JavaScript Workshop this weekend. While you have some knowledge of JavaScript, it has been quite some time since you’ve used it, and could use a tune up. Plus, there are lots of people attending that may have similar interests as you. However, you do have that project due Monday that you are a little behind on. Do you attend the workshop?\n")
     JavaScript_Workshop.yes(1, 0, 1, 0)
-    JavaScript_Workshop.no(0, 1, -1, 0)
+    JavaScript_Workshop.no(0, 1, -2, 0)
     eventList.append(JavaScript_Workshop)
     
-    Computer_Club_Meet = Event("Computer Club Meet - Your friend approaches you and suggests that you come with them to the computer club meet this week. This week, they’ll be covering special Python Classes, something that you’ve been looking into yourself. You could even meet some people here. However, you have a lot of work this week. If you really crunch, you might be able to get it all done. Is it worth the crunch?\n")
-    Computer_Club_Meet.yes(2, 0, 2, -1)
-    Computer_Club_Meet.no(0, 1, -1, 0)
+    Computer_Club_Meet = Event("Computer Club Meet - Your friend approaches you and suggests that you come with them to the computer club meet this week. This week, they’ll be covering special Python Classes, something that you’ve been looking into yourself. You could even meet some people here. However, you have a lot of work this week. If you really crunch, you might be able to get it all done. Do you do your work?\n")
+    Computer_Club_Meet.yes(0, 1, -1, 0)
+    Computer_Club_Meet.no(2, 0, 2, -1)
     eventList.append(Computer_Club_Meet)
     
     Free_Website = Event("Free Website - You find a website that teaches coding. For Free! For free, you can access lessons for ALL the different coding languages! And they have activities that you can use to practice your code. This is your dream come true. One problem. In order for this sort of time commitment, you may have to sacrifice hanging out with your friend this weekend. It’s been a bit since you’ve hung out, and your friend might not like delaying this any longer. Do you hang out with them?\n")
@@ -59,7 +59,7 @@ def generate_events():
     Parental_Visit.no(0, 0, 2, 0)
     eventList.append(Parental_Visit)
     
-    Game_Night_with_the_Boys = Event("Game Night with the Boys - Every week, you and your friends get together and play Crag Cats 3. Your role in your party is quite vital. However, this week, you have an absolute TON of homework. Your professors were not merciful this week. You’re sure that you could get it all done this weekend, but it’ll be quite the crunch. Do you do your work?")
+    Game_Night_with_the_Boys = Event("Game Night with the Boys - Every week, you and your friends get together and play Crag Cats 3. Your role in your party is quite vital. However, this week, you have an absolute TON of homework. Your professors were not merciful this week. You’re sure that you could get it all done this weekend, but it’ll be quite the crunch. Do you do your work?\n")
     Game_Night_with_the_Boys.yes(0, 1, -1, 0)
     Game_Night_with_the_Boys.no(0, 0, 2, -1)
     eventList.append(Game_Night_with_the_Boys)
@@ -79,7 +79,7 @@ def generate_events():
     Faith_Crisis.no(0, 0, -2, 2)
     eventList.append(Faith_Crisis)
     
-    Take_A_Walk = Event("Take a Walk - It’s been a long, exhausting week of work. After your final class of the week, you decide that it’d be beneficial for you if you take a walk before dinner. You know that if you don’t get to the cafeteria soon, a long line will form and you'll be stuck there for a while, which could mess up your Friday night study time. But you really need this walk. Do you study?")
+    Take_A_Walk = Event("Take a Walk - It’s been a long, exhausting week of work. After your final class of the week, you decide that it’d be beneficial for you if you take a walk before dinner. You know that if you don’t get to the cafeteria soon, a long line will form and you'll be stuck there for a while, which could mess up your Friday night study time. But you really need this walk. Do you study?\n")
     Take_A_Walk.yes(0, -1, 0, +1)
     Take_A_Walk.no(0, 1, 0, -1)
     eventList.append(Take_A_Walk)
@@ -141,27 +141,27 @@ def generate_events():
     
     Study_Session = Event("Study Session - Your roommate is struggling with a class that you are very good at. One day, after class, they come up to you and ask if you could do some study sessions with them. You don’t have a lot of teaching experience, and your roommate can be kind of intense sometimes, so this could be more draining for you than actually productive. On the other hand, you two don’t have that much of a connection. Do you help him?\n")
     Study_Session.yes(0, 0, 1, -1)
-    Study_Session.no(0, 0, -1, 1)
+    Study_Session.no(0, 0, -2, 1)
     eventList.append(Study_Session)
     
     Sisters_Play = Event("Sister’s Play - Your younger sister is in the school play, and you said that you would go. So this weekend, you make the long drive home and see the performance. You’re quite proud of your sister. She’s growing up right before your eyes, and this play allowed you to really see that. You’re glad you came. As you’re packing your bags to head back, your mom tells you that you can stay the weekend. It’s been a while since you came home, and you are getting sick of dorm food and dorm mattresses. However, you do have early morning classes on Monday, so if you do spend the weekend here, you may come in Sunday all tired. Plus, it’s much easier to study in your dorm than it is in your noisy house. Do you stay?\n")
     Sisters_Play.yes(0, -1, 4, 5)
-    Sisters_Play.no(0, 2, -3, 0)
+    Sisters_Play.no(0, 2, -4, 0)
     eventList.append(Sisters_Play)
     
     International_Technology_Summit = Event("International Technology Summit - About an hour away from the university, the International Technology Summit is taking place. There will be a lot of speakers from all kinds of companies, each talking about their technologies. And you may meet some people too. However, you do have to miss a couple of classes in order to make it on time, and these classes are difficult. You may have problems understanding the homework if you skip. Is it worth going?\n")
     International_Technology_Summit.yes(5, -2, 4, 0)
-    International_Technology_Summit.no(0, 1, -2, -2)
+    International_Technology_Summit.no(0, 1, -3, -2)
     eventList.append(International_Technology_Summit)
     
-    Disaster = Event("Disaster  - A Natural disaster is heading for your school. Your university announces that classes are canceled for the remainder of the week. This is good, as it allows you to quickly get your work done and maybe even do some coding! However, your parents call and say that they are very uncomfortable with you being there during a disaster. It’s a long and stressful drive, and the roads may be clogged up with other people leaving to go to other places. And you may not be able to code as much as you would if you do the drive. Do you try to make the stay?")
+    Disaster = Event("Disaster  - A Natural disaster is heading for your school. Your university announces that classes are canceled for the remainder of the week. This is good, as it allows you to quickly get your work done and maybe even do some coding! However, your parents call and say that they are very uncomfortable with you being there during a disaster. It’s a long and stressful drive, and the roads may be clogged up with other people leaving to go to other places. And you may not be able to code as much as you would if you do the drive. Do you try to make the stay?\n")
     Disaster.yes(4, 4, -3, 0)
     Disaster.no(2, 2, 4, -3)
     eventList.append(Disaster)
     
     Old_Friend_From_High_School = Event("Old Friend From High School - Your best friend from high school is coming from his school to visit. It’s been a bit since you’ve seen them, since you spent all summer getting ready for college and have drifted apart a little bit. However, you do have a significant amount of work this weekend. You’re sure you can power through it all if you half ass an assignment or two. Do you hang out with him?\n")
     Old_Friend_From_High_School.yes(0, -1, 4, 4)
-    Old_Friend_From_High_School.no(0, 1, -2, -2)
+    Old_Friend_From_High_School.no(0, 1, -3, -2)
     eventList.append(Old_Friend_From_High_School)
     
     Code_Runners_Workshop = Event("Man, you have a lot of work this weekend. You could probably get it all done all nice. If it weren’t for the fact that the software company Code Runners is coming to the university and is hosting a workshop on all sorts of aspects of coding. It would be very beneficial to go. But again, lots of work. Do you do your work?\n")
