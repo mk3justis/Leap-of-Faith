@@ -53,7 +53,8 @@ def main():
                 # When that event happens, the number becomes 0, ensuring that it will never happen again
                 event_object = event_list[events[event]]
                 events[event] = -1
-                player.event_effects(event_object, 0)
+                player.event_effects(event_object, random.randint(0,1))
+                # player.event_effects(event_object, 1)
                 break
                 
             

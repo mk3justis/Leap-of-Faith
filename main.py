@@ -22,7 +22,7 @@ def main():
     player = Player(0, 0, 0, 0, 0, name, dream_job, university)
     focus_rank = 1
     focus_points = 4
-
+    already_chose_focus = []
     while focus_rank <= 3:
         print(f"What was your number {focus_rank} focus this summer?")
         if player.coding == 0 :
@@ -33,8 +33,18 @@ def main():
             print("3 for Education")
         if player.mental == 0:
             print("4 for Mental")
-        focus = int(input())
-
+        focus = input()
+        while True :
+            if focus.isdigit() :
+                focus = int(focus)
+            else :
+                focus = input("Please enter a number.\n")
+                continue
+            if focus in already_chose_focus or focus < 1 or focus > 4 :
+                continue
+            else :
+                break
+            
         if focus == 1 and player.coding == 0 :
             player.update_coding(focus_points)
         elif focus == 2 and player.social == 0 :
@@ -43,6 +53,7 @@ def main():
             player.update_education(focus_points)
         elif focus == 4 and player.mental == 0 :
             player.update_mental(focus_points)
+        already_chose_focus.append(focus)
         focus_points -= 1
         focus_rank += 1
 
@@ -54,12 +65,21 @@ def main():
         print("Week", week)
         event_type = 0  # Event type. 1 = Rare, 2-8 = common, 9-10 = none
         event = 0
-        if week == 8 :
-            week+=1
+        if week == 7 :
+            print("You have an exam next week.")
+            event_type = random.randint(1, 10)
+        elif week == 8 :
+            week += 1
             continue  # some code for exam 1 goes here
+        elif week == 15 :
+            print("The career fair is next week.")
+            event_type = random.randint(1, 10)
         elif week == 16 :
             week += 1
             continue  # some code for the career fair goes here
+        elif week == 23 :
+            print("You have an exam next week.")
+            event_type = random.randint(1, 10)
         elif week == 24 :
             week += 1
             continue  # some code for exam 2 goes here
@@ -75,17 +95,17 @@ def main():
             print("There doesn't seem to be much going on this week. What would you like to do?")
             print("1 for experimenting and developing code")
             print("2 for hanging out with friends")
-            print("3 for getting ahead oon the material in class")
+            print("3 for getting ahead on the material in class")
             print("4 for relaxing and destressing")
             while True :
                 choice = input()
                 if choice.isdigit() :
-                    int(choice)
+                    choice = int(choice)
                     break
                 else :
                     print("Please enter a number.")
                     continue
-            
+            print(choice)
             if choice == 1 :
                 player.update_coding(1)
             elif choice == 2 :
@@ -95,6 +115,7 @@ def main():
             elif choice == 4 :
                 player.update_mental(1)
             week += 1
+            print(f"Coding: {player.coding}, Education: {player.education}, Social: {player.social}, Mental: {player.mental}")
             continue
         # Generate the event:
         while True :
@@ -111,7 +132,8 @@ def main():
             events[event] = -1
             condition = input(event_object.blurb)
             while True :
-                str(condition).lower()
+                # condition = str(condition)
+                condition.lower()
                 if condition == 'y' or condition == 'yes' :
                     player.event_effects(event_object, 0)
                     break
@@ -119,13 +141,11 @@ def main():
                     player.event_effects(event_object, 1)
                     break
                 else :
-                    condition = input("Please enter Y/N or Yes/No.")
+                    condition = input("Please enter y/n or yes/no.\n")
                     continue
+            print(f"Coding: {player.coding}, Education: {player.education}, Social: {player.social}, Mental: {player.mental}")
             break
-            
-        
-            
+                 
         week += 1
-    print(f"Coding: {player.coding}, Education: {player.education}, Social: {player.social}, Mental: {player.mental}")
 
 main()
