@@ -4,7 +4,7 @@ from event import Event
 def generate_events():
     eventList = []
 
-    Bad_Office_Hours = Event("Bad Office Hours - You do not understand this chapter\’s material. Luckily, your professor has office hours today. But you do not like your professor. He has a hard to understand accent and every conversation with him is just an endless drain. At the same time, this may be the only way to properly wrap your head around the material. Is it worth going?\n")
+    Bad_Office_Hours = Event("Bad Office Hours - You do not understand this chapter’s material. Luckily, your professor has office hours today. But you do not like your professor. He has a hard to understand accent and every conversation with him is just an endless drain. At the same time, this may be the only way to properly wrap your head around the material. Is it worth going?\n")
     Bad_Office_Hours.yes(0, 1, 0, -2)
     Bad_Office_Hours.no(0, -1, 0, 0)
     eventList.append(Bad_Office_Hours)

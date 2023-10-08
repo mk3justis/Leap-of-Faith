@@ -1,5 +1,6 @@
 from job import Jobs
 from create_jobs import generate_jobs
+from delayPrint import delay_print
 
 def go_to_career_fair(player) :
     jobs = generate_jobs()
@@ -11,16 +12,16 @@ def go_to_career_fair(player) :
     mental_points = 2 + player.mental
     if player.mental < 0 :
         mental_points = 2
-    print("Here is the list internship programs at the career fair: ")
+    delay_print("Here is the list internship programs at the career fair: \n")
     for company in jobs :
-        print(company.name)
-    print(f"You have {mental_points} energy to allocate to jobs.")
+        delay_print(company.name, "\n")
+    delay_print("You have ", str(mental_points), " energy to allocate to jobs.\n")
     for job in jobs :
         if mental_points == 0 :
-            print("You are out of energy.")
+            delay_print("You are out of energy.\n")
             break
-        print(f"{job.name}: {job.description}")
-        print(f"How much energy would you like to allocate to {job.name}?")
+        delay_print(job.name,": ", job.description, "\n")
+        delay_print("How much energy would you like to allocate to ", job.name,"?\n")
         amount = input()
         while True :
             if amount.isdigit() :
@@ -37,4 +38,4 @@ def go_to_career_fair(player) :
         job.energy += amount
         mental_points -= amount
         print(f"You now have {mental_points} energy left over.")
-    print(f"Good for you! You finished the Career Fair.")
+    delay_print("Good for you! You finished the Career Fair.\n")
