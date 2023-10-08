@@ -66,12 +66,6 @@ def main():
     condition = ''
     while week < 32:
         delay_print("Week ", str(week), "\n")
-        # if(player.education < 0):
-        #     print("Your grades are not where they should be. You feel stressed.")
-        #     player.mental -= 1
-        # if(player.coding < 0):
-        #     print("You are not the coder you thought that you would be. You feel like you're not good enough.")
-        #     player.mental -= 1
         event_type = 0  # Event type. 1 = Rare, 2-8 = common, 9-10 = none
         event = 0
         if week == 11:
