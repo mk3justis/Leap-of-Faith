@@ -1,6 +1,7 @@
 import pandas as pd
 
 
+
 class Event:
     def __init__(self, blurb):
         self.blurb = blurb

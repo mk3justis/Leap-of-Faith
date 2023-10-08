@@ -8,7 +8,6 @@
 # boysie.event_effects(office_hours, condition)
 # boysie.event_effects(office_hours, condition)
 # print(boysie.coding, boysie.education, boysie.social, boysie.mental)
-
 from player import Player
 from create_events import generate_events
 from exams import *
