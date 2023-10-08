@@ -45,51 +45,87 @@ def main():
             player.update_mental(focus_points)
         focus_points -= 1
         focus_rank += 1
-        print(player.coding)
 
-        week = 1
-        while week < 32 :
-            event_number = 0  # Event type. 1 = Rare, 2-8 = common, 9-10 = none
-            event = 0
-            if week == 8 :
-                pass  # some code for exam 1 goes here
-            elif week == 16 :
-                pass  # some code for the career fair goes here
-            elif week == 24 :
-                pass  # some code for exam 2 goes here
-            else:
-                event_number = random.randint(1, 10)
-
-            # Generate the event:
-            if event_number == 1 :
-                event = random.randint(28, 34)
-            elif event_number > 1 and event_number < 9 :
-                event = random.randint(0, 27)
-                
+    week = 1
+    events = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26,
+                27, 28, 29, 30, 31, 32, 33, 34]
+    condition = ''
+    while week < 32 :
+        print("Week", week)
+        event_type = 0  # Event type. 1 = Rare, 2-8 = common, 9-10 = none
+        event = 0
+        if week == 8 :
+            week+=1
+            continue  # some code for exam 1 goes here
+        elif week == 16 :
+            week += 1
+            continue  # some code for the career fair goes here
+        elif week == 24 :
+            week += 1
+            continue  # some code for exam 2 goes here
+        else:
+            event_type = random.randint(1, 10)
+        
+        
+        if event_type == 1 :
+            event = random.randint(28, 34)
+        elif event_type > 1 and event_type < 9 :
+            event = random.randint(0, 27)
+        elif event_type >= 9 :
+            print("There doesn't seem to be much going on this week. What would you like to do?")
+            print("1 for experimenting and developing code")
+            print("2 for hanging out with friends")
+            print("3 for getting ahead oon the material in class")
+            print("4 for relaxing and destressing")
+            while True :
+                choice = input()
+                if choice.isdigit() :
+                    int(choice)
+                    break
+                else :
+                    print("Please enter a number.")
+                    continue
+            
+            if choice == 1 :
+                player.update_coding(1)
+            elif choice == 2 :
+                player.update_social(1)
+            elif choice == 3 :
+                player.update_education(1)
+            elif choice == 4 :
+                player.update_mental(1)
+            week += 1
+            continue
+        # Generate the event:
+        while True :
+            if events[event] == -1 :
+                if event_type == 1 :
+                    event = random.randint(28, 34)
+                elif event_type > 1 and event_type < 9 :
+                    event = random.randint(0, 27)
+                continue
             # This section of code prevents an event from happening twice
             # It uses an array to store the number associated with that event
             # When that event happens, the number becomes 0, ensuring that it will never happen again
-            events = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26,
-                        27, 28, 29, 30, 31, 32, 33, 34]
-            event_list[events[event]]
+            event_object = event_list[events[event]]
             events[event] = -1
-
-            if event_number >= 9 :  # None
-                print("There doesn't seem to be much going on this week. What would you like to do?")
-                print("1 for experimenting and developing code")
-                print("2 for hanging out with friends")
-                print("3 for getting ahead oon the material in class")
-                print("4 for relaxing and destressing")
-                choice = int(input(""))
-                
-                if choice == 1 :
-                    player.update_coding(1)
-                elif choice == 2 :
-                    player.update_social(1)
-                elif choice == 3 :
-                    player.update_education(1)
-                elif choice == 4 :
-                    player.update_mental(1)
-            week = week + 1
+            condition = input(event_object.blurb)
+            while True :
+                str(condition).lower()
+                if condition == 'y' or condition == 'yes' :
+                    player.event_effects(event_object, 0)
+                    break
+                elif condition == 'n' or condition == 'no' :
+                    player.event_effects(event_object, 1)
+                    break
+                else :
+                    condition = input("Please enter Y/N or Yes/No.")
+                    continue
+            break
+            
+        
+            
+        week += 1
+    print(f"Coding: {player.coding}, Education: {player.education}, Social: {player.social}, Mental: {player.mental}")
 
 main()

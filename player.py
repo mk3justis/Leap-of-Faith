@@ -25,19 +25,9 @@ class Player :
         
     
     # Private function to convert user input to 0 or 1.
-    def __condition_update(self, condition) :
-        condition.lower() 
-        if condition == 'y' or condition == 'yes' :
-            condition = 0
-        elif condition == 'n' or condition == 'no' :
-            condition = 1
-        else :
-            raise Exception("Invalid condition.")
     
     # Calls private function and updates stats based on event.
     def event_effects(self, event, condition) :
-        self.__condition_update(condition)
-        
         if condition == 0 :
             self.update_coding(event.attributes.iloc[0][0])
             self.update_education(event.attributes.iloc[0][1])
