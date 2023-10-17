@@ -46,6 +46,8 @@ def main():
             if focus in already_chose_focus or focus < 1 or focus > 4:
                 continue
             else:
+                focus_rank += 1
+                focus_points -= 1
                 break
 
         if focus == 1 and player.coding == 0:
@@ -56,9 +58,7 @@ def main():
             player.update_education(focus_points)
         elif focus == 4 and player.mental == 0:
             player.update_mental(focus_points)
-        already_chose_focus.append(focus)
-        focus_points -= 1
-        focus_rank += 1
+        already_chose_focus.append(str(focus))
 
     week = 1
     events = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26,

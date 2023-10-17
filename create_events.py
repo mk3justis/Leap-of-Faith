@@ -164,7 +164,7 @@ def generate_events():
     Old_Friend_From_High_School.no(0, 1, -3, -2)
     eventList.append(Old_Friend_From_High_School)
 
-    Code_Runners_Workshop = Event("Man, you have a lot of work this weekend. You could probably get it all done all nice. If it weren’t for the fact that the software company Code Runners is coming to the university and is hosting a workshop on all sorts of aspects of coding. It would be very beneficial to go. But again, lots of work. Do you pass on the workshop and do your work?\n")
+    Code_Runners_Workshop = Event("Code Runners Workshop - Man, you have a lot of work this weekend. You could probably get it all done all nice. If it weren’t for the fact that the software company Code Runners is coming to the university and is hosting a workshop on all sorts of aspects of coding. It would be very beneficial to go. But again, lots of work. Do you pass on the workshop and do your work?\n")
     Code_Runners_Workshop.yes(0, 1, 0, -2)
     Code_Runners_Workshop.no(5, 0, 3, 0)
     eventList.append(Code_Runners_Workshop)
